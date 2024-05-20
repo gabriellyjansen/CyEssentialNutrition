@@ -3,6 +3,7 @@
 
             cy.visit(Cypress.env('baseURL'))
 
+            cy.click('#logo-menu-desktop-container')
             cy.contains('Já tenho cadastro')
                   .should('be.visible')
       

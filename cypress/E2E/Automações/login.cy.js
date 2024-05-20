@@ -1,4 +1,5 @@
 describe('Testes página de login.', () => {
+  
 
    beforeEach(() => {Cypress.on('uncaught:exception', function (err, runnable) {
         return false;
@@ -6,12 +7,11 @@ describe('Testes página de login.', () => {
 
     })
 
-    it('Login e-mail cliente final', () => {
+    it.only('Login e-mail cliente final', () => {
       
-        cy.loginCF()    
-        cy.contains('Minha conta')
-          .should('be.visible')
-          
+        cy.loginCF()
+        cy.url().should('be.equal', BASEURL)
+        
     })
 
     it('Login CF com dados válidos CPF', () => {
@@ -80,7 +80,7 @@ describe('Testes página de login.', () => {
 
   })
 
-  it.only('Login Colaborador', () => {
+  it('Login Colaborador', () => {
 
     cy.loginCB()
 
